@@ -32,7 +32,7 @@ class Character(models.Model):
     desc = models.TextField(max_length=255)
     race = models.CharField(max_length=255)
     gender = models.CharField(max_length=255, choices= choices_live)
-    loc = models.ForeignKey(Location, on_delete=models.CASCADE)
+    loc = models.ForeignKey(Location, on_delete=models.CASCADE, related_name='char_loc')
     birth_loc = models.ForeignKey(Location, on_delete=models.CASCADE, related_name='Location_birth')
 
     def __str__(self):

@@ -2,6 +2,12 @@ from rest_framework import serializers
 from .models import CustomUser
 
 
+class ChangeUserSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = CustomUser
+        fields = ('id', 'last_name', 'first_name', 'middle_name', 'username', 'email')
+
+
 class CustomUserSerializer(serializers.ModelSerializer):
     password = serializers.CharField(style={'input_type': 'password'})
 
